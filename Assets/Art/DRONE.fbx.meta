@@ -10,23 +10,33 @@ ModelImporter:
     100004: drone_camera
     100006: drone_l_leg2
     100008: drone_leg_support
+    100010: drone_l_leg3
+    100012: drone_leg_support1
     400000: //RootNode
     400002: drone_body
     400004: drone_camera
     400006: drone_l_leg2
     400008: drone_leg_support
+    400010: drone_l_leg3
+    400012: drone_leg_support1
     2300000: drone_body
     2300002: drone_camera
     2300004: drone_l_leg2
     2300006: drone_leg_support
+    2300008: drone_l_leg3
+    2300010: drone_leg_support1
     3300000: drone_body
     3300002: drone_camera
     3300004: drone_l_leg2
     3300006: drone_leg_support
+    3300008: drone_l_leg3
+    3300010: drone_leg_support1
     4300000: drone_body
     4300002: drone_camera
     4300004: drone_leg_support
     4300006: drone_l_leg2
+    4300008: drone_leg_support1
+    4300010: drone_l_leg3
     9500000: //RootNode
   materials:
     importMaterials: 1
