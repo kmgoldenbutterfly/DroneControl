@@ -7,6 +7,7 @@ public class EffectVolume : MonoBehaviour
     public enum EffectType
     {
         None,
+        Collision,
         Repair,
         Victory,
     }
