@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MovingObject))]
+[RequireComponent(typeof(Collider))]
 public class DroneController : MonoBehaviour
 {
+    private System.Random rng = new System.Random();
+    private Dictionary<EffectVolume.EffectType, List<ParticleSystem>> effectsByType = new Dictionary<EffectVolume.EffectType, List<ParticleSystem>>();
+
     public MovingObject myMovingObject;
     public TargetTracker trackingCam;
     public Transform visual;
     public PropSpinner[] allProps;
     public VictoryEffect victoryEffect;
     public bool doVictoryWaggle = false;
-
-    private System.Random rng = new System.Random();
-    private Dictionary<EffectVolume.EffectType, List<ParticleSystem>> effectsByType = new Dictionary<EffectVolume.EffectType, List<ParticleSystem>>();
-
     public int curHitPoints = 100;
     public int maxHitPoints = 100;
+    public float collisionEffectDuration = 3.5f;
     public float dmgMultiplier = 10.0f;
     public float deathFlipMultiplier = 20.0f;
+
+    private DateTime lastCollision = DateTime.MinValue;
+    private DateTime lastUpdate = DateTime.MinValue;
 
     public void Start()
     {
@@ -44,9 +48,11 @@ public class DroneController : MonoBehaviour
 
     public void Update()
     {
+        DateTime now = DateTime.UtcNow;
+
+        // Victory Waggle
         if (doVictoryWaggle)
         {
-            DateTime now = DateTime.UtcNow;
             double t = now.Millisecond / 1000.0;
             double x = 20.0 * Math.Cos(2.0 * Math.PI * t);
             double z = 20.0 * Math.Sin(2.0 * Math.PI * t);
@@ -57,6 +63,12 @@ public class DroneController : MonoBehaviour
         {
             visual.localRotation = Quaternion.identity;
         }
+
+        // Disable Collision Effect
+        var collisionEndTime = lastCollision + TimeSpan.FromSeconds(collisionEffectDuration);
+        if (lastUpdate <= collisionEndTime && collisionEndTime < now)
+            SetActiveEffect(EffectVolume.EffectType.None);
+        lastUpdate = now;
     }
 
     void OnCollisionEnter(Collision col)
@@ -67,10 +79,13 @@ public class DroneController : MonoBehaviour
             int dmg = (int)Math.Ceiling(col.relativeVelocity.magnitude * dmgMultiplier);
             curHitPoints -= dmg;
             Debug.Log(gameObject.name + " took " + dmg + " damage from a collision!  HP: " + curHitPoints + "/" + maxHitPoints);
+            lastCollision = DateTime.UtcNow;
+            SetActiveEffect(EffectVolume.EffectType.Collision);
         }
 
         if (prevHitPoints > 0 && curHitPoints <= 0)
         {
+            Debug.Log("Drone Death");
             // Crash the drone
             myMovingObject.myRigidBody.useGravity = true;
             Vector3 deathSpin = new Vector3((float)rng.NextDouble() * deathFlipMultiplier, (float)rng.NextDouble() * deathFlipMultiplier, (float)rng.NextDouble() * deathFlipMultiplier);
@@ -83,6 +98,8 @@ public class DroneController : MonoBehaviour
 
             // Lock up the tracking-cam, so it looks like it's crashing
             trackingCam.isCrashed = true;
+            lastCollision = DateTime.UtcNow + TimeSpan.FromHours(24);
+            SetActiveEffect(EffectVolume.EffectType.Collision);
         }
     }
 
@@ -95,9 +112,10 @@ public class DroneController : MonoBehaviour
 
     public void OnVictory()
     {
-        MovingObject.StopAllMovers();
+        Debug.Log("Drone Victory: (" + curHitPoints + "/" + maxHitPoints + ")");
         if (curHitPoints > 0) // Doesn't count if you crash into it
         {
+            MovingObject.StopAllMovers();
             doVictoryWaggle = true;
             victoryEffect.OnVictory();
         }

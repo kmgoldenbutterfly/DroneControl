@@ -13,12 +13,33 @@ public class MovingObject : MonoBehaviour
     public Vector3 moveToLocation;
     public float moveToLocationVelocity;
     public float threshhold = 0.5f;
+    public bool setMovement = true;
 
     public void Start()
     {
         // Initialize movement
         myRigidBody = GetComponent<Rigidbody>();
+    }
 
+    public void Update()
+    {
+        if (setMovement)
+            SetMovement();
+
+        if (moveOption == MoveOption.MoveToLocation)
+        {
+            Vector3 distToTarget = moveToLocation - transform.position;
+            if (distToTarget.sqrMagnitude < threshhold * threshhold)
+            {
+                // Stop
+                myRigidBody.velocity = Vector3.zero;
+                moveOption = MoveOption.Arrived;
+            }
+        }
+    }
+
+    private void SetMovement()
+    {
         if (moveOption == MoveOption.ConstantVelocity)
         {
             myRigidBody.velocity = constantVelocity;
@@ -31,20 +52,7 @@ public class MovingObject : MonoBehaviour
             myRigidBody.velocity = constantVelocity;
             myRigidBody.useGravity = false;
         }
-    }
-
-    public void Update()
-    {
-        if (moveOption == MoveOption.MoveToLocation)
-        {
-            Vector3 distToTarget = moveToLocation - transform.position;
-            if (distToTarget.sqrMagnitude < threshhold * threshhold)
-            {
-                // Stop
-                myRigidBody.velocity = Vector3.zero;
-                moveOption = MoveOption.Arrived;
-            }
-        }
+        setMovement = false;
     }
 
     public static void StopAllMovers()
