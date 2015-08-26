@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 59236f5e71465c54481a26b00cff05f9
+timeCreated: 1440576259
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: abdomen
+    100002: abdomen 1
+    100004: abdomen_end
+    100006: backleg_l_end
+    100008: backleg_l_foot
+    100010: backleg_l_hip
+    100012: backleg_l_knee
+    100014: backleg_r_end
+    100016: backleg_r_foot
+    100018: backleg_r_hip
+    100020: backleg_r_knee
+    100022: backwing_l
+    100024: backwing_l_end
+    100026: backwing_r
+    100028: backwing_r_end
+    100030: Body
+    100032: body
+    100034: frontleg_l_end
+    100036: frontleg_l_foot
+    100038: frontleg_l_hip
+    100040: frontleg_l_knee
+    100042: frontleg_r_end
+    100044: frontleg_r_foot
+    100046: frontleg_R_hip
+    100048: frontleg_r_knee
+    100050: frontwing_l
+    100052: frontwing_l_end
+    100054: frontwing_r
+    100056: frontwing_r_end
+    100058: head
+    100060: head 1
+    100062: //RootNode
+    100064: hornet_drone1
+    100066: leg_backL
+    100068: leg_backR
+    100070: leg_front_L
+    100072: leg_front_R
+    100074: leg_middle_L
+    100076: leg_middle_R
+    100078: midleg_l_end
+    100080: midleg_l_foot
+    100082: midleg_l_hip
+    100084: midleg_l_knee
+    100086: midleg_r_end
+    100088: midleg_r_foot
+    100090: midleg_R_hip
+    100092: midleg_R_knee
+    100094: neck
+    100096: wing_back_L1
+    100098: wing_back_R1
+    100100: wing_front_L1
+    100102: wing_front_L2
+    100104: wing_front_L2 1
+    100106: wing_front_R1
+    100108: wing_front_R2
+    100110: wing_front_R2 1
+    400000: abdomen
+    400002: abdomen 1
+    400004: abdomen_end
+    400006: backleg_l_end
+    400008: backleg_l_foot
+    400010: backleg_l_hip
+    400012: backleg_l_knee
+    400014: backleg_r_end
+    400016: backleg_r_foot
+    400018: backleg_r_hip
+    400020: backleg_r_knee
+    400022: backwing_l
+    400024: backwing_l_end
+    400026: backwing_r
+    400028: backwing_r_end
+    400030: Body
+    400032: body
+    400034: frontleg_l_end
+    400036: frontleg_l_foot
+    400038: frontleg_l_hip
+    400040: frontleg_l_knee
+    400042: frontleg_r_end
+    400044: frontleg_r_foot
+    400046: frontleg_R_hip
+    400048: frontleg_r_knee
+    400050: frontwing_l
+    400052: frontwing_l_end
+    400054: frontwing_r
+    400056: frontwing_r_end
+    400058: head
+    400060: head 1
+    400062: //RootNode
+    400064: hornet_drone1
+    400066: leg_backL
+    400068: leg_backR
+    400070: leg_front_L
+    400072: leg_front_R
+    400074: leg_middle_L
+    400076: leg_middle_R
+    400078: midleg_l_end
+    400080: midleg_l_foot
+    400082: midleg_l_hip
+    400084: midleg_l_knee
+    400086: midleg_r_end
+    400088: midleg_r_foot
+    400090: midleg_R_hip
+    400092: midleg_R_knee
+    400094: neck
+    400096: wing_back_L1
+    400098: wing_back_R1
+    400100: wing_front_L1
+    400102: wing_front_L2
+    400104: wing_front_L2 1
+    400106: wing_front_R1
+    400108: wing_front_R2
+    400110: wing_front_R2 1
+    4300000: head
+    4300002: body
+    4300004: wing_front_L1
+    4300006: wing_front_L2
+    4300008: wing_front_R1
+    4300010: wing_front_R2
+    4300012: wing_back_R1
+    4300014: wing_front_R2
+    4300016: wing_back_L1
+    4300018: wing_front_L2
+    4300020: leg_front_R
+    4300022: leg_front_L
+    4300024: leg_middle_R
+    4300026: leg_middle_L
+    4300028: leg_backR
+    4300030: leg_backL
+    4300032: abdomen
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: abdomen 1
+    13700002: body
+    13700004: head
+    13700006: leg_backL
+    13700008: leg_backR
+    13700010: leg_front_L
+    13700012: leg_front_R
+    13700014: leg_middle_L
+    13700016: leg_middle_R
+    13700018: wing_back_L1
+    13700020: wing_back_R1
+    13700022: wing_front_L1
+    13700024: wing_front_L2
+    13700026: wing_front_L2 1
+    13700028: wing_front_R1
+    13700030: wing_front_R2
+    13700032: wing_front_R2 1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
